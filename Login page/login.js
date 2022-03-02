@@ -15,7 +15,10 @@ display:fkex`
 
 const Label=styled.label`
 `
-
+const Button=styled.h2`
+width:20%
+height:30%
+color:red;`
 
 function loginpage() {
     return (
