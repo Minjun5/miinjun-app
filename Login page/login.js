@@ -20,10 +20,16 @@ const Label=styled.label`
 function loginpage() {
     return (
         <Conainer>
-            <Rightside>loginpage</Rightside>
+            <Rightside><H1>loginpage</H1>
                 <Welcome>Welcome</Welcome>
+                <Input></Input>
                 <Label>ID</Label>
+                <LabelWrspper>
+                <Input></Input>
                 <Label>password</Label>
+                </LabelWrspper>
+                <Button>Login</Button>
+            </Rightside>
             <Leftside>hi</Leftside>
         </Conainer>)
 }
