@@ -21,6 +21,15 @@ height:30%
 color:red;`
 
 function loginpage() {
+     const [user, setuser]=useState({
+        id="",
+        password=""
+    })
+    const {id,password}=user
+    let tan=document.getElementById("h").innerHTML
+    const navigateToMainPage=()=>{alert(tan)
+
+    }
     return (
         <Conainer>
             <Rightside><H1>loginpage</H1>
