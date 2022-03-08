@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React, {useState} from "react";
+
 const Conainer=styled.div`
 font-size:30px;`
 const Rightside=styled.h1`
@@ -21,30 +23,44 @@ height:30%
 color:red;`
 
 function loginpage() {
-     const [user, setuser]=useState({
+    const [user, setuser]=useState({
         id="",
         password=""
-    })
+    });//when we first load a oage we initialize 
+       //the states to empty string/null/0
+       //states will be filled in when the user does specification
     const {id,password}=user
-    let tan=document.getElementById("h").innerHTML
-    const navigateToMainPage=()=>{alert(tan)
+    const navigateToMainPage=()=>{history.push("/main")
 
     }
+    const putUserinfo=(e)=>{
+        const{name,value=e.target};
+        console.log(name)
+        console.log(value)
+        setuser({...user,
+        [name]:value}
+        );console.log(user)
+        };
+    const 
+    //e stands for event
     return (
         <Conainer>
             <Rightside><H1>loginpage</H1>
                 <Welcome>Welcome</Welcome>
-                <Input></Input>
+                <Input type="text" value="id" name="name" onChange={putUserinfo}></Input>
+                {/*//we are going to replace emty string to the following input by the user**/}
                 <Label>ID</Label>
                 <LabelWrspper>
                 <Input type="password"></Input>
                 <Label>password</Label>
                 </LabelWrspper>
                 <Button>Login</Button>
+                <Loginpage onclink={navigateToMainPage}></Loginpage>
             </Rightside>
             <Leftside>hi</Leftside>
         </Conainer>)
 }
 
 
+export default loginpage;
 export default loginpage;
