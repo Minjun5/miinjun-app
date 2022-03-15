@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React, {useState} from "react";
+import {useHistory}from "react-router-dom";
 
 const Conainer=styled.div`
 font-size:30px;`
@@ -22,6 +23,12 @@ width:20%
 height:30%
 color:red;`
 
+const P=styled.p`image:url(https://blog.kakaocdn.net/dn/cZsyTw/btq0u5VBWge/F7xmauYA6r8nnbXSz2vJhK/img.png)
+width:20%
+height:20%
+display:flex
+`
+
 function loginpage() {
     const [user, setuser]=useState({
         id="",
@@ -30,6 +37,12 @@ function loginpage() {
        //the states to empty string/null/0
        //states will be filled in when the user does specification
     const {id,password}=user
+    if(id===""|| password===""){
+       alert('wrong')
+   }
+   if(id==="m"&&password==="1234"){
+       history.push("/main")
+   }
     const navigateToMainPage=()=>{history.push("/main")
 
     }
@@ -60,7 +73,4 @@ function loginpage() {
             <Leftside>hi</Leftside>
         </Conainer>)
 }
-
-
-
 export default loginpage;
