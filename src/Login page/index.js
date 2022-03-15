@@ -41,7 +41,7 @@ function loginpage() {
         [name]:value}
         );console.log(user)
         };
-    const 
+   
     //e stands for event
     return (
         <Conainer>
@@ -62,5 +62,5 @@ function loginpage() {
 }
 
 
-export default loginpage;
+
 export default loginpage;
