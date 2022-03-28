@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, {useState} from "react";
-import {useHistory}from "react-router-dom";
+
+
 
 const Conainer=styled.div`
 font-size:30px;`
@@ -16,7 +17,10 @@ const Leftside=styled.div`
 background-color:#344ceb
 display:flex`
 
-const Label=styled.label`background-image
+const Input=styled.div`
+`
+
+const Label=styled.label`color:blue;
 `
 const Button=styled.h2`
 width:20%
@@ -28,11 +32,12 @@ width:20%
 height:20%
 display:flex
 `
+const history=Useh
 
-function loginpage() {
+function Loginpage() {
     const [user, setuser]=useState({
-        id="",
-        password=""
+        id:"",
+        password:""
     });//when we first load a oage we initialize 
        //the states to empty string/null/0
        //states will be filled in when the user does specification
@@ -43,11 +48,12 @@ function loginpage() {
    if(id==="m"&&password==="1234"){
        history.push("/main")
    }
-    const navigateToMainPage=()=>{history.push("/main")
+    function navigateToMainPage() {
+        history.push("/main");
 
     }
     const putUserinfo=(e)=>{
-        const{name,value=e.target};
+        const {name,value}=e.target;
         console.log(name)
         console.log(value)
         setuser({...user,
@@ -57,20 +63,20 @@ function loginpage() {
     //e stands for event
     return (
         <Conainer>
-            <Rightside><H1>loginpage</H1>
+            <Rightside>loginpage
                 <Welcome>Welcome</Welcome>
                 <Input type="text" value="id" name="name" onChange={putUserinfo}></Input>
                 {/*//we are going to replace emty string to the following input by the user**/}
                 <Label>ID</Label>
-                <LabelWrspper>
+                
                 <Input type="password"></Input>
                 <Label>password</Label>
-                </LabelWrspper>
+                
                 <Button>Login</Button>
                 <Loginpage onclink={navigateToMainPage}></Loginpage>
-                <P></P>
+                <P ></P>
             </Rightside>
             <Leftside>hi</Leftside>
         </Conainer>)
 }
-export default loginpage;
+export default Loginpage;
