@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { BrowserRouter as Router, Route } from "react-router-dom"
-
+import { useHistory } from "react-router-dom";
 
 
 const B=styled.h1`image:url(https://www.howtogeek.com/wp-content/uploads/2019/03/gmail-1.png?width=1198&trim=1,1&bg-color=000&pad=1,1)
@@ -19,12 +19,18 @@ width:10%
 height:10%
 display:flex`
 
+const Learn=styled.p`width:10%
+height:10%
+`
 
 
 
 
-function mainpage(){
-
+function Mainpage(){
+const history = useHistory()
+    function learnpage(){
+        history.push("/learn")
+    }
     return (
         <div>
             <Router>
@@ -35,8 +41,9 @@ function mainpage(){
             <A></A>
             <B></B>
             <C></C>
+            <Learn onclick={learnpage}>learn more</Learn>
             
         </div>
     )
 }
-export default mainpage
+export default Mainpage
