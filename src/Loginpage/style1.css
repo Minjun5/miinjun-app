@@ -4,3 +4,6 @@
 .B{
     align-items: center;
 }
+.B:hover{
+    background-color: blue;
+}
